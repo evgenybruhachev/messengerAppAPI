@@ -1,0 +1,131 @@
+2016-01-28 06:53:27 Error: [MissingControllerException] Controller class SignupController could not be found.
+Exception Attributes: array (
+  'class' => 'SignupController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp-2.7.9/signup
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-01-28 09:45:27 Error: [MissingActionException] Action SignupController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'SignupController',
+  'action' => 'index',
+)
+Request URL: /cakephp-2.7.9/signup
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SignupController), Object(CakeRequest))
+#2 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-01-28 11:16:43 Error: [MissingViewException] View file "Signup/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Signup/index.ctp',
+)
+Request URL: /cakephp-2.7.9/signup
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp-2.7.9/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SignupController), Object(CakeRequest))
+#4 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-01-28 12:59:15 Error: Fatal Error (1): Call to undefined function dubug() in [/var/www/html/cakephp-2.7.9/app/Controller/SignupController.php, line 9]
+2016-01-28 12:59:15 Error: [FatalErrorException] Call to undefined function dubug()
+Request URL: /cakephp-2.7.9/signup
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 9)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 9, Array)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 9, Array)
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-01-28 13:45:01 Error: [MissingActionException] Action SignupController::add() could not be found.
+Exception Attributes: array (
+  'controller' => 'SignupController',
+  'action' => 'add',
+)
+Request URL: /cakephp-2.7.9/signup
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SignupController), Object(CakeRequest))
+#2 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-01-28 13:46:05 Error: [MissingViewException] View file "Signup/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Signup/add.ctp',
+)
+Request URL: /cakephp-2.7.9/signup
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp-2.7.9/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SignupController), Object(CakeRequest))
+#4 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-01-28 13:52:13 Error: [MissingViewException] View file "Signup/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Signup/add.ctp',
+)
+Request URL: /cakephp-2.7.9/signup.json
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/View/View.php(470): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp-2.7.9/lib/Cake/Controller/Controller.php(960): View->render(NULL, NULL)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SignupController), Object(CakeRequest))
+#4 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-01-28 13:58:58 Error: [MissingViewException] View file "Signup/json/add.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Signup/json/add.ctp',
+)
+Request URL: /cakephp-2.7.9/signup.json
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/View/JsonView.php(107): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp-2.7.9/lib/Cake/Controller/Controller.php(960): JsonView->render(NULL, NULL)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SignupController), Object(CakeRequest))
+#4 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-01-28 14:03:49 Error: Fatal Error (4): syntax error, unexpected '=', expecting variable (T_VARIABLE) or '$' in [/var/www/html/cakephp-2.7.9/app/Controller/SignupController.php, line 18]
+2016-01-28 14:03:49 Error: [FatalErrorException] syntax error, unexpected '=', expecting variable (T_VARIABLE) or '$'
+Request URL: /cakephp-2.7.9/signup.json
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/html/c...', 18)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/html/c...', 18, Array)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/html/c...', 18, Array)
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-01-28 14:20:19 Error: Fatal Error (1): Call to undefined method SessionComponent::create() in [/var/www/html/cakephp-2.7.9/app/Controller/SignupController.php, line 28]
+2016-01-28 14:20:19 Error: [FatalErrorException] Call to undefined method SessionComponent::create()
+Request URL: /cakephp-2.7.9/signup.json
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 28, Array)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 28, Array)
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-01-28 14:25:18 Error: Fatal Error (1): Call to undefined method SessionComponent::create() in [/var/www/html/cakephp-2.7.9/app/Controller/SignupController.php, line 28]
+2016-01-28 14:25:18 Error: [FatalErrorException] Call to undefined method SessionComponent::create()
+Request URL: /cakephp-2.7.9/signup.json
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/Error/ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/html/c...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/html/c...', 28, Array)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(933): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/html/c...', 28, Array)
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Core/App.php(906): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-01-28 14:39:37 Error: [MissingViewException] View file "Signup/json/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Signup/json/index.ctp',
+)
+Request URL: /cakephp-2.7.9/signup.json
+Stack Trace:
+#0 /var/www/html/cakephp-2.7.9/lib/Cake/View/JsonView.php(107): View->_getViewFileName(NULL)
+#1 /var/www/html/cakephp-2.7.9/lib/Cake/Controller/Controller.php(960): JsonView->render(NULL, NULL)
+#2 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/cakephp-2.7.9/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SignupController), Object(CakeRequest))
+#4 /var/www/html/cakephp-2.7.9/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
