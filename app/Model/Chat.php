@@ -1,4 +1,4 @@
 <?php
 class Chat extends AppModel {
-	public $hasMany = 'UsersChat';
+	public $useTable = 'chats';
 }

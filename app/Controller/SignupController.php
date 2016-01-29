@@ -31,11 +31,9 @@ class SignupController extends AppController {
 		*/
 		
 		$data = array(
-			'User' => array('nickname' => "generatedUser"),
-			'Chat' => array()
+			'User' => array('nickname' => 'generatedUser'),
+			'Chat' => array('title' => 'Generated chat')
 		);
-		$this->UsersChat->create();
-		$userschat = $this->UsersChat->save(array());
 		$this->UsersChat->saveAssociated($data);
 		$sessionId = $this->UsersChat->id;
 		$this->set(array('sessionId' => $sessionId,
