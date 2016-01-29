@@ -1,26 +1,48 @@
 <?php
 class SignupController extends AppController {
 
-	public $uses = ['Signup','User','SessionInstance'];
+	public $uses = array('UsersChat','Chat','User');
 	public $helpers = array('Html', 'Form');
 	public $components = array('RequestHandler');
 
 	public function index(){
+		debug($this->UsersChat);
 	}
 
 	public function add(){
 		/*
-		$data = array(
-			'User' => array('nickname' => "generatedUser"),
-			'Session' => array()
-		);
-		$this->Signup->create();
-		$this->Signup->saveAssociated($data, array('deep' => true));
-		$sessionId = $this->Signup->id;
+		$data = array('nickname' => 'generatedUser');
+		$this->User->create();
+		$user = $this->User->save($data);
+
+		$data = array();
+		$this->Chat->create();
+		$chat = $this->Chat->save($data);
+
+		$data = array('user_id' => $this->User->id,
+			'chat_id' => $this->Chat->id);
+		$this->UsersChat->create();
+		$userschat = $this->UsersChat->save($data);
+
+		$sessionId = $this->UsersChat->id;
 		$this->set(array('sessionId' => $sessionId,
 			'_serialize' => array('sessionId')
 		));
 		*/
+		
+		$data = array(
+			'User' => array('nickname' => "generatedUser"),
+			'Chat' => array()
+		);
+		$this->UsersChat->create();
+		$userschat = $this->UsersChat->save(array());
+		$this->UsersChat->saveAssociated($data);
+		$sessionId = $this->UsersChat->id;
+		$this->set(array('sessionId' => $sessionId,
+			'_serialize' => array('sessionId')
+		));
+		
+		/*
 		$data = array('nickname' => 'generatedUser');
 		$this->User->create();
 		$user = $this->User->save($data);
@@ -36,5 +58,6 @@ class SignupController extends AppController {
 		$this->set(array('signup' => $signup,
 			'_serialize' => array('signup')
 		));
+		*/
 	}
 }
