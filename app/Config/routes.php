@@ -31,7 +31,7 @@
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-	Router::mapResources('signup');
+	Router::mapResources(array('signup', 'session', 'messages'));
 	Router::parseExtensions();
 
 /**
