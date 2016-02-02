@@ -3,11 +3,16 @@ class MessagesController extends AppController{
 
 	public $uses = array('Message','UsersChat');
 	public $helpers = array('Html', 'Form');
-	public $components = array('RequestHandler');
 
 	public function index(){
 		$queryParams = $this->request->query;
+		if (!isset($queryParams['session'])) {
+			throw new BadRequestException("The session id isn't passed");
+		}
 		$sessionInfo = $this->UsersChat->findById($queryParams['session']);
+		if (!$sessionInfo) {
+			throw new BadRequestException("The session with id ".$queryParams['session']." doesn't exist");
+		}
 
 		$conditions = array();
 		$conditions['Message.chat_id'] = $sessionInfo['Chat']['id'];
@@ -15,11 +20,17 @@ class MessagesController extends AppController{
 		$oldestMessageId = $this->request->query('oldest_message_id');
 		if ( $oldestMessageId ){
 			$oldestMessage = $this->Message->findById((int)$oldestMessageId);
+			if (!$oldestMessage) {
+				throw new BadRequestException("The message with oldest_message_id = ".$oldestMessageId." doesn't exist");
+			}
 			$conditions['Message.updated_at <'] = $oldestMessage['Message']['updated_at'];
 		}
 		$newestMessageId = $this->request->query('newest_message_id');
 		if ( $newestMessageId ){
 			$newestMessage = $this->Message->findById((int)$newestMessageId);
+			if (!$newestMessage) {
+				throw new BadRequestException("The message with newest_message_id = ".$newestMessageId." doesn't exist");
+			}
 			$conditions['Message.updated_at >'] = $newestMessage['Message']['updated_at'];
 		}
 
@@ -48,18 +59,12 @@ class MessagesController extends AppController{
 			$messageData = $this->request->data['message'];
 			$session = $this->UsersChat->findById($sessionId);
 			$data = array(
-				'Message' => array(
-					'text' => $messageData['text'],
-					'updated_at' => date('Y-m-d H:i:s')
-				),
+				'Message' => array('text' => $messageData['text']),
 				'User' => array('id' => $session['User']['id']),
 				'Chat' => array('id' => $session['Chat']['id'])
 			);
 			$this->Message->saveAssociated($data);
-			$messageId = $this->Message->id;
-			$this->set(array('messageId' => $messageId,
-				'_serialize' => array('messageId')
-			));
+			$this->set('_serialize', null);
 		}
 	}
 

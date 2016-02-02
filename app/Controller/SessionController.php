@@ -13,6 +13,10 @@ class SessionController extends AppController{
 	public function add(){
 		$sessionId = $this->request->data['session'];
 		$data = $this->UsersChat->findById($sessionId);
+		if (!$data) {
+			throw new BadRequestException("The session with id ".$sessionId." doesn't exist");
+			
+		}
 		$userdata = $data['User'];
 		$this->set(array('User' => $userdata,
 			'_serialize' => array('User')

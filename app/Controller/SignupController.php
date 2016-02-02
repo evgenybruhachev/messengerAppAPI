@@ -16,8 +16,8 @@ class SignupController extends AppController {
 		);
 		$this->UsersChat->saveAssociated($data);
 		$sessionId = $this->UsersChat->id;
-		$this->set(array('sessionId' => $sessionId,
-			'_serialize' => array('sessionId')
+		$this->set(array('session' => $sessionId,
+			'_serialize' => array('session')
 		));
 	}
 }

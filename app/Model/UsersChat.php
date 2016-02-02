@@ -13,4 +13,16 @@ class UsersChat extends AppModel {
 			'fields' => array('id')
 		)
 	);
+
+	public function afterFind($results, $primary = false){
+		foreach ($results as $key => $value) {
+			if (isset($value['User']['id'])) {
+				$results[$key]['User']['id'] = (int)$value['User']['id'];
+			}
+			if (isset($value['Chat']['id'])) {
+				$results[$key]['Chat']['id'] = (int)$value['Chat']['id'];
+			}
+		}
+		return $results;
+	}
 }
